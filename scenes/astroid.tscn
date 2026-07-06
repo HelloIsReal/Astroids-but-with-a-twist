@@ -1,12 +1,24 @@
 [gd_scene format=3 uid="uid://d4bnwb0din4io"]
 
-[ext_resource type="Script" uid="uid://co7sljqje82ty" path="res://rigid_body_2d.gd" id="1_rbjxg"]
+[ext_resource type="Script" uid="uid://co7sljqje82ty" path="res://astroid.gd" id="1_rbjxg"]
 [ext_resource type="Texture2D" uid="uid://dd4oavhwp5xfd" path="res://icon.svg" id="2_1b6ih"]
 
-[node name="RigidBody2D" type="RigidBody2D" unique_id=303239602]
-gravity_scale = 0.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b6ih"]
+size = Vector2(128, 128)
+
+[node name="astroid" type="Area2D" unique_id=1219263593 groups=["astroid"]]
 script = ExtResource("1_rbjxg")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1161386620]
 modulate = Color(1, 0.40724552, 0.338652, 1)
 texture = ExtResource("2_1b6ih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1693707380]
+shape = SubResource("RectangleShape2D_1b6ih")
+
+[node name="spawnTimer" type="Timer" parent="." unique_id=1343144048]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1541032612]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="spawnTimer" to="." method="_on_spawn_timer_timeout"]

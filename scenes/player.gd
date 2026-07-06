@@ -6,7 +6,7 @@ var canShoot=true
 
 
 func _physics_process(delta):
-	$"..".playerPosition = position
+	Global.playerPosition = position
 	movement()
 	move_and_slide()
 	look_at(get_global_mouse_position())

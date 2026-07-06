@@ -17,7 +17,7 @@ position = Vector2(-1250, -550)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=751409140]
 
-[node name="score" type="Label" parent="CanvasLayer" unique_id=1606785829]
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1606785829]
 texture_filter = 1
 offset_left = 7.0
 offset_top = -11.0
@@ -25,31 +25,3 @@ offset_right = 872.0
 offset_bottom = 77.0
 theme_override_font_sizes/font_size = 64
 text = "SCORE: 1"
-
-[node name="score2" type="Label" parent="CanvasLayer" unique_id=1463327137]
-texture_filter = 1
-offset_left = 558.0
-offset_top = -11.0
-offset_right = 1423.0
-offset_bottom = 164.0
-theme_override_font_sizes/font_size = 128
-text = "WAVE: #"
-
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=921333320]
-visible = false
-position = Vector2(-1250, -550)
-color = Color(0.65012825, 0.6501283, 0.65012825, 1)
-metadata/_edit_lock_ = true
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1319788564]
-show_behind_parent = true
-z_index = -4
-offset_left = -1295.0
-offset_top = -719.0
-offset_right = -1255.0
-offset_bottom = -679.0
-scale = Vector2(66.3515, 36.8315)
-color = Color(0, 0, 0, 1)
-metadata/_edit_lock_ = true
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=634015092]
