@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://bowts8n8oe7kb"]
 
+[ext_resource type="Script" uid="uid://3filbg3587hq" path="res://scenes/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://cjmwjfh8xglrd" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://d4bnwb0din4io" path="res://scenes/astroid.tscn" id="3_sugp2"]
 
-[node name="Node2D" type="Node2D" unique_id=1541501634]
+[node name="main" type="Node2D" unique_id=1541501634]
+script = ExtResource("1_0wfyh")
 
 [node name="player" parent="." unique_id=918465937 instance=ExtResource("1_o5qli")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1993854172]
 zoom = Vector2(0.5, 0.5)
+
+[node name="RigidBody2D" parent="." unique_id=303239602 instance=ExtResource("3_sugp2")]
+position = Vector2(-922, -452)

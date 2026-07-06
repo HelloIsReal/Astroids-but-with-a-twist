@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 500.0
 var bullet = preload("res://scenes/bullet.tscn")
 var canShoot=true
 
 
 func _physics_process(delta):
+	$"..".playerPosition = position
 	movement()
 	move_and_slide()
 	look_at(get_global_mouse_position())

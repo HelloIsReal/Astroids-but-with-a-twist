@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d4bnwb0din4io"]
+
+[ext_resource type="Script" uid="uid://co7sljqje82ty" path="res://rigid_body_2d.gd" id="1_rbjxg"]
+[ext_resource type="Texture2D" uid="uid://dd4oavhwp5xfd" path="res://icon.svg" id="2_1b6ih"]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=303239602]
+gravity_scale = 0.0
+script = ExtResource("1_rbjxg")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1161386620]
+modulate = Color(1, 0.40724552, 0.338652, 1)
+texture = ExtResource("2_1b6ih")
