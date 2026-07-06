@@ -26,7 +26,8 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 [global_group]
 
 bullet=""
-astroid=""
+asteroid=""
+player=""
 
 [input]
 

@@ -32,9 +32,11 @@ func _on_area_entered(area):
 	if(area.is_in_group("bullet")):
 		astroidHealth -= 1
 		if(astroidHealth<=0):
-			print("astroid explode!")
+			print("asteroid explode!")
 			Global.score+=1
 			queue_free()
+	if(area.is_in_group("player")):
+		queue_free()
 
 
 func _on_spawn_timer_timeout():

@@ -14,5 +14,5 @@ func _process(delta):
 
 
 func _on_area_entered(area):
-	if(area.is_in_group("astroid")):
+	if(area.is_in_group("asteroid")):
 		queue_free()

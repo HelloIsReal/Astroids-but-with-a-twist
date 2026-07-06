@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cjmwjfh8xglrd"]
+
+[ext_resource type="Script" uid="uid://erscc4rhl0ss" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bhwnn5bu6ivl5" path="res://sprites/player/player.png" id="2_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(81, 102)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 18.5
+height = 107.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(74, 30)
+
+[node name="player" type="CharacterBody2D" unique_id=918465937]
+script = ExtResource("1_g2els")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=178722584]
+texture_filter = 1
+position = Vector2(4, 7)
+scale = Vector2(3, 3)
+texture = ExtResource("2_g2els")
+
+[node name="shootCooldown" type="Timer" parent="." unique_id=353400669]
+wait_time = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1889571663]
+position = Vector2(-0.5, -5)
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=15979945]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1402429441]
+position = Vector2(-0.5, -6.5)
+shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=299107633]
+position = Vector2(-1, 33)
+shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=222940857]
+offset_left = -36.0
+offset_top = -63.0
+offset_right = -32.0
+offset_bottom = -36.0
+rotation = -1.5707964
+scale = Vector2(2.6986752, 2.6986752)
+max_value = 10.0
+page = 1.0
+value = 5.0
+fill_mode = 2
+show_percentage = false
+
+[connection signal="timeout" from="shootCooldown" to="." method="_on_shoot_cooldown_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

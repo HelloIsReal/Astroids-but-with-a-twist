@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://d4bnwb0din4io"]
 
-[ext_resource type="Script" uid="uid://co7sljqje82ty" path="res://astroid.gd" id="1_rbjxg"]
-[ext_resource type="Texture2D" uid="uid://dd4oavhwp5xfd" path="res://icon.svg" id="2_1b6ih"]
+[ext_resource type="Script" uid="uid://co7sljqje82ty" path="res://astroid.gd" id="1_6mo6b"]
+[ext_resource type="Texture2D" uid="uid://dd4oavhwp5xfd" path="res://icon.svg" id="2_t4se3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1b6ih"]
 size = Vector2(128, 128)
 
-[node name="astroid" type="Area2D" unique_id=1219263593 groups=["astroid"]]
-script = ExtResource("1_rbjxg")
+[node name="asteroid" type="Area2D" unique_id=1219263593 groups=["asteroid"]]
+script = ExtResource("1_6mo6b")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1161386620]
 modulate = Color(1, 0.40724552, 0.338652, 1)
-texture = ExtResource("2_1b6ih")
+texture = ExtResource("2_t4se3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1693707380]
 shape = SubResource("RectangleShape2D_1b6ih")

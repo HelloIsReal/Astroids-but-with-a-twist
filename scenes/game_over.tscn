@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dc8bw4jajy2wp"]
+
+[ext_resource type="Script" uid="uid://clyx42yow1ybf" path="res://scenes/game_over.gd" id="1_xeevv"]
+
+[node name="gameOver" type="Node2D" unique_id=1509733412]
+script = ExtResource("1_xeevv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1732188505]
+show_behind_parent = true
+z_index = -4
+offset_left = -790.0
+offset_top = -410.0
+offset_right = -750.0
+offset_bottom = -370.0
+scale = Vector2(66.3515, 36.8315)
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1294017432]
+position = Vector2(577, 321)
+
+[node name="gameOverText" type="Label" parent="." unique_id=1018953056]
+texture_filter = 1
+texture_repeat = 1
+offset_left = 213.0
+offset_top = 14.0
+offset_right = 947.0
+offset_bottom = 189.0
+theme_override_font_sizes/font_size = 128
+text = "GAME OVER"
+
+[node name="score" type="Label" parent="." unique_id=72167213]
+texture_filter = 1
+texture_repeat = 1
+offset_left = 419.0
+offset_top = 177.0
+offset_right = 1153.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 64
+text = "Score: #"
+
+[node name="Button" type="Button" parent="." unique_id=1082263271]
+texture_filter = 2
+offset_left = 410.00003
+offset_top = 346.0
+offset_right = 504.00003
+offset_bottom = 377.0
+scale = Vector2(3.6819866, 3.6819866)
+text = "Play again?"

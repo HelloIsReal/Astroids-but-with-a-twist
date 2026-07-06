@@ -1,22 +1,35 @@
 [gd_scene format=3 uid="uid://cjmwjfh8xglrd"]
 
-[ext_resource type="Texture2D" uid="uid://dd4oavhwp5xfd" path="res://icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://erscc4rhl0ss" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bhwnn5bu6ivl5" path="res://sprites/player/player.png" id="2_g2els"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(128.5, 129)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 19.0
+height = 112.0
 
-[node name="player" type="CharacterBody2D" unique_id=918465937]
+[node name="player" type="CharacterBody2D" unique_id=918465937 groups=["player"]]
 script = ExtResource("1_g2els")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=178722584]
-texture = ExtResource("1_3vyb7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402429441]
-position = Vector2(-0.25, 0.5)
-shape = SubResource("RectangleShape2D_g2els")
+texture_filter = 1
+position = Vector2(73.38486, 1.7424774)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = ExtResource("2_g2els")
+offset = Vector2(1.7525084, 23.128286)
 
 [node name="shootCooldown" type="Timer" parent="." unique_id=353400669]
 wait_time = 0.5
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=40612267]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=15979945]
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=443900438]
+shape = SubResource("CapsuleShape2D_g2els")
+
 [connection signal="timeout" from="shootCooldown" to="." method="_on_shoot_cooldown_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

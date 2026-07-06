@@ -5,8 +5,10 @@ var bullet = preload("res://scenes/bullet.tscn")
 var canShoot=true
 
 
+
 func _physics_process(delta):
 	Global.playerPosition = position
+	
 	movement()
 	move_and_slide()
 	look_at(get_global_mouse_position())
@@ -14,7 +16,7 @@ func _physics_process(delta):
 		canShoot=false
 		$shootCooldown.start()
 		var newBullet = bullet.instantiate()
-		newBullet.global_position = global_position
+		newBullet.global_position = $Icon.global_position
 		get_tree().current_scene.add_child(newBullet)
 		
 
@@ -26,3 +28,11 @@ func movement():
 
 func _on_shoot_cooldown_timeout():
 	canShoot=true
+
+
+func _on_area_2d_area_entered(area):
+	if(area.is_in_group("asteroid")):
+		print("hit!")
+		Global.playerHealth-=1
+	if(Global.playerHealth<=0):
+		print("game over!")
