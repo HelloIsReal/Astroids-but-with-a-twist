@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bowts8n8oe7kb"]
+
+[ext_resource type="Script" uid="uid://3filbg3587hq" path="res://scenes/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://cjmwjfh8xglrd" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bfcput256toja" path="res://scenes/cameraShake.gd" id="3_sugp2"]
+
+[node name="main" type="Node2D" unique_id=1541501634]
+script = ExtResource("1_0wfyh")
+
+[node name="player" parent="." unique_id=918465937 instance=ExtResource("1_o5qli")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1993854172]
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("3_sugp2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=751409140]
+
+[node name="score" type="Label" parent="CanvasLayer" unique_id=1606785829]
+texture_filter = 1
+offset_left = 418.0
+offset_top = 66.0
+offset_right = 1283.0
+offset_bottom = 154.0
+theme_override_font_sizes/font_size = 50
+text = "SCORE: 1"
+
+[node name="wave" type="Label" parent="CanvasLayer" unique_id=1463327137]
+texture_filter = 1
+offset_left = 365.0
+offset_top = -17.0
+offset_right = 1230.0
+offset_bottom = 158.0
+theme_override_font_sizes/font_size = 80
+text = "WAVE: #"
+
+[node name="healthBar" type="ProgressBar" parent="CanvasLayer" unique_id=1603427214]
+show_behind_parent = true
+texture_filter = 1
+offset_left = 17.0
+offset_top = 558.0
+offset_right = 1117.0
+offset_bottom = 633.0
+pivot_offset = Vector2(15.660217, 815.6168)
+max_value = 10.0
+step = 1.0
+value = 8.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=493507470]
+offset_left = 424.0
+offset_top = 557.0
+offset_right = 673.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 65
+text = "HEALTH"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=921333320]
+visible = false
+position = Vector2(-1250, -550)
+color = Color(0.65012825, 0.6501283, 0.65012825, 1)
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1319788564]
+show_behind_parent = true
+z_index = -4
+offset_left = -1295.0
+offset_top = -719.0
+offset_right = -1255.0
+offset_bottom = -679.0
+scale = Vector2(66.3515, 36.8315)
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=634015092]

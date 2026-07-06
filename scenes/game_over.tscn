@@ -46,3 +46,5 @@ offset_right = 504.00003
 offset_bottom = 377.0
 scale = Vector2(3.6819866, 3.6819866)
 text = "Play again?"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
