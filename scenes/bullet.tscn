@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://crjgy7v41q41h"]
 
 [ext_resource type="Texture2D" uid="uid://dd4oavhwp5xfd" path="res://icon.svg" id="1_mkf8s"]
+[ext_resource type="Script" uid="uid://uhavh43pu7pu" path="res://scenes/bullet.gd" id="1_y25gk"]
 
-[node name="Area2D" type="Area2D" unique_id=620099007]
+[node name="bullet" type="Area2D" unique_id=620099007]
 modulate = Color(0.9524457, 0.9524458, 3.85046e-06, 1)
+script = ExtResource("1_y25gk")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=285664824]
+z_index = -1
 scale = Vector2(0.5390625, 0.050781246)
 texture = ExtResource("1_mkf8s")
