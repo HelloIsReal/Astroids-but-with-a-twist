@@ -8,16 +8,7 @@ var canShoot=true
 
 func _physics_process(delta):
 	Global.playerPosition = position
-	#if(position.y<=-655):
-		#position.y=650
-	#if(position.y>=655):
-		#position.y=-650
-	#if(position.x<=-1155):
-		#position.x=1150
-	#if(position.x>=1155):
-		#position.x=-1150
-	#if(!position.y<=-655 && !position.y>=655 && !position.x<=-1155 && !position.x>=1155):
-		#movement()
+
 	if(position.y<=-655):
 		position.y+=10
 	elif(position.y>=655):

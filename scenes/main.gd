@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var rng = RandomNumberGenerator.new()
 var asteroid = preload("res://scenes/asteroid.tscn")
 @onready var scoreLabel = $CanvasLayer/score
@@ -18,7 +17,6 @@ func startWave():
 	print(Global.currentWave)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	$Camera2D.rotation += (Global.currentWave * 0.01) * delta
 	$CanvasLayer/wave.text = ("Wave: %d" % Global.currentWave)
@@ -28,8 +26,6 @@ func _physics_process(delta):
 		Global.currentWave+=1
 		startWave()
 		$newWave.play()
-	
-
 
 
 func spawnAstroid():

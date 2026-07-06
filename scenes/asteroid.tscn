@@ -21,8 +21,6 @@ shape = SubResource("RectangleShape2D_1b6ih")
 
 [node name="spawnTimer" type="Timer" parent="." unique_id=1343144048]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1541032612]
-
 [node name="lifeSpan" type="Timer" parent="." unique_id=2043438416]
 wait_time = 10.0
 one_shot = true
