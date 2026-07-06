@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cjmwjfh8xglrd" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bfcput256toja" path="res://scenes/cameraShake.gd" id="3_sugp2"]
 [ext_resource type="AudioStream" uid="uid://0nhpb8vfnry" path="res://Stasis music by SondreDrakensson.mp3" id="4_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://p7y3kglt35i6" path="res://Glitch_6.wav" id="5_tbgi4"]
+[ext_resource type="AudioStream" uid="uid://d3umq3rgwsoe7" path="res://Impact_2_Top_End.wav" id="6_tefeu"]
 
 [node name="main" type="Node2D" unique_id=1541501634]
 script = ExtResource("1_0wfyh")
@@ -72,6 +74,13 @@ offset_bottom = -5132.0
 scale = Vector2(477.41315, 263.58978)
 color = Color(0, 0, 0, 1)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=849789486]
+[node name="bgm" type="AudioStreamPlayer2D" parent="." unique_id=849789486]
 stream = ExtResource("4_jyhfs")
 autoplay = true
+
+[node name="newWave" type="AudioStreamPlayer2D" parent="." unique_id=1013536832]
+stream = ExtResource("5_tbgi4")
+volume_db = 5.0
+
+[node name="destroyedsfx" type="AudioStreamPlayer2D" parent="." unique_id=1810792602]
+stream = ExtResource("6_tefeu")

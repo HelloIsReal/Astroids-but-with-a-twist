@@ -51,6 +51,7 @@ func _on_shoot_cooldown_timeout():
 
 func _on_area_2d_area_entered(area):
 	if(area.is_in_group("asteroid")):
+		$hurtSound.play(0.85)
 		Global.playerHealth-=1
 		$"../Camera2D".apply_shake()
 	if(Global.playerHealth<=0):

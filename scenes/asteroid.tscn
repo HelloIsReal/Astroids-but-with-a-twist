@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://co7sljqje82ty" path="res://astroid.gd" id="1_6mo6b"]
 [ext_resource type="Texture2D" uid="uid://dd4oavhwp5xfd" path="res://icon.svg" id="2_t4se3"]
 [ext_resource type="AudioStream" uid="uid://cc2mew0008x4f" path="res://Impact_1.wav" id="3_t4se3"]
-[ext_resource type="AudioStream" uid="uid://fiw83eyngjov" path="res://Impact_2_Mid.wav" id="4_pnq5b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1b6ih"]
 size = Vector2(128, 128)
@@ -30,10 +29,7 @@ one_shot = true
 
 [node name="hitSound" type="AudioStreamPlayer2D" parent="." unique_id=1382549193]
 stream = ExtResource("3_t4se3")
-volume_db = 5.0
-
-[node name="destroyedSound" type="AudioStreamPlayer2D" parent="." unique_id=203408750]
-stream = ExtResource("4_pnq5b")
+volume_db = 10.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="spawnTimer" to="." method="_on_spawn_timer_timeout"]

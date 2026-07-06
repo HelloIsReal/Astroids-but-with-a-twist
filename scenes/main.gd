@@ -12,6 +12,7 @@ func _ready():
 	startWave()
 
 func startWave():
+	
 	for i in range(Global.currentWave+1):
 		spawnAstroid()
 	print(Global.currentWave)
@@ -26,6 +27,7 @@ func _physics_process(delta):
 	if(Global.remainingAsteroids==0):
 		Global.currentWave+=1
 		startWave()
+		$newWave.play()
 	
 
 

@@ -48,11 +48,7 @@ func _on_area_entered(area):
 		astroidHealth=0
 		queue_free()
 	if(astroidHealth<=0):
-			
-			#$Icon.visible=true
-			#$CollisionShape2D.disabled=true
-			#$destroyedSound.play(0.85)
-			#await $destroyedSound.finished
+			get_tree().current_scene.get_node("destroyedsfx").play(0.85)
 			Global.score+=1
 			Global.remainingAsteroids-=1
 			queue_free()
