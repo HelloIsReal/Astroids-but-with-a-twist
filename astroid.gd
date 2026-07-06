@@ -41,6 +41,7 @@ func _on_area_entered(area):
 		astroidHealth -= 1
 	if(area.is_in_group("player")):
 		astroidHealth=0
+		Global.score-=1
 		queue_free()
 	if(astroidHealth<=0):
 			get_tree().current_scene.get_node("destroyedsfx").play(0.85)

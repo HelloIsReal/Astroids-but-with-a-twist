@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 Global="*uid://c6jlbxes57uxr"
 
+[display]
+
+window/size/mode=4
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")

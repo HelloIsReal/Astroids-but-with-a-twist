@@ -6,7 +6,7 @@ var canShoot=true
 
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	Global.playerPosition = position
 
 	if(position.y<=-655):

@@ -4,4 +4,7 @@ func _ready():
 	$score.text = ("Score: %d" % Global.score)
 
 func _on_button_button_up():
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	Global.playerHealth=10
+	Global.currentWave=0
+	get_tree().change_scene_to_file("res://scenes/main.tscn") 
+	
